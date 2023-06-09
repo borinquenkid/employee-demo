@@ -1,7 +1,7 @@
 package com.borinquenterrier.employeedemo.controller;
 
 
-import com.borinquenterrier.employeedemo.model.*;
+import com.borinquenterrier.employeedemo.model.IEmployee;
 import com.borinquenterrier.employeedemo.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

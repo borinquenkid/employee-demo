@@ -65,8 +65,14 @@ class ManagerEmployeeTest {
 
     @Test
     public void invalid_take_vacationDays() {
-        Exception exception = assertThrows(NotEnoughVacactionDaysException.class, () -> managerEmployee.takeVacation(1f));
+        Exception exception = assertThrows(NotEnoughVacationDaysException.class, () -> managerEmployee.takeVacation(1f));
         assertEquals("You have not worked enough days", exception.getMessage());
+    }
+
+    @Test
+    public void negative_take_vacationDays() {
+        Exception exception = assertThrows(InvalidVacationDaysException.class, () -> managerEmployee.takeVacation(-1f));
+        assertEquals("Negative days", exception.getMessage());
     }
 
 }

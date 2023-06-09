@@ -46,8 +46,11 @@ abstract class AEmployee implements IEmployee {
 
     @Override
     public void takeVacation(float vacationDays) {
+        if (vacationDays<= 0f) {
+            throw new InvalidVacationDaysException();
+        }
         if (this.vacationDays < vacationDays) {
-            throw new NotEnoughVacactionDaysException();
+            throw new NotEnoughVacationDaysException();
         }
         this.vacationDays -= vacationDays;
     }

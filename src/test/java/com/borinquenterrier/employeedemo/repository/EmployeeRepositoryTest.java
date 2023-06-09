@@ -1,6 +1,7 @@
 package com.borinquenterrier.employeedemo.repository;
 
-import com.borinquenterrier.employeedemo.model.*;
+import com.borinquenterrier.employeedemo.model.IEmployee;
+import com.borinquenterrier.employeedemo.model.SalariedEmployee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

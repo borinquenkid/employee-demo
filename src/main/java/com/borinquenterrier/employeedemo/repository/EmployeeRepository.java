@@ -1,7 +1,10 @@
 package com.borinquenterrier.employeedemo.repository;
 
 
-import com.borinquenterrier.employeedemo.model.*;
+import com.borinquenterrier.employeedemo.model.HourlyEmployee;
+import com.borinquenterrier.employeedemo.model.IEmployee;
+import com.borinquenterrier.employeedemo.model.ManagerEmployee;
+import com.borinquenterrier.employeedemo.model.SalariedEmployee;
 import net.datafaker.Faker;
 import org.springframework.stereotype.Service;
 
@@ -13,13 +16,13 @@ import java.util.stream.IntStream;
 public class EmployeeRepository {
 
 
-    private List<IEmployee> employees = new ArrayList<>();
+    private final List<IEmployee> employees = new ArrayList<>();
 
 
     public EmployeeRepository() {
         Faker faker = new Faker();
         IntStream.rangeClosed(1, 30).forEach((workDays) -> {
-            IEmployee employee = null;
+            IEmployee employee;
             if (workDays > 0 && workDays <= 10) {
                 employee = new HourlyEmployee(faker.name().fullName(), workDays);
             } else if (workDays > 10 && workDays <= 20) {
