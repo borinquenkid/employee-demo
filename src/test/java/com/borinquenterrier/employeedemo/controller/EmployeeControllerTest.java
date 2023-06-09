@@ -54,10 +54,18 @@ class EmployeeControllerTest {
     }
 
     @Test
-    void work_and_vacation_bad_employee_id() {
+    void work_and_vacation_invalid_employee_id() {
         get("/api/employees/a")
                 .then()
                 .statusCode(400);
+    }
+
+
+    @Test
+    void work_and_vacation_nonexistent_employee_id() {
+        get("/api/employees/-1")
+                .then()
+                .statusCode(404);
     }
 
 
